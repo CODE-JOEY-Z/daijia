@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: server-gateway
+  profiles:
+    active: dev
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:                                  #服务拉取
+        server-addr: 192.168.101.129:8848
+        namespace: dev1000
+      config:                                     #服务拉取
+        server-addr: 192.168.101.129:8848
+        namespace: dev1000
+        prefix: ${spring.application.name}
+        file-extension: yaml

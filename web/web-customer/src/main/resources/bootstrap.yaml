@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: web-customer
+  profiles:
+    active: dev
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.101.129:8848
+        namespace: dev1000
+      config:
+        server-addr: 192.168.101.129:8848
+        namespace: dev1000
+        prefix: ${spring.application.name}
+        file-extension: yaml
+        shared-configs:
+          - data-id: common-account.yaml
