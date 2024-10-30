@@ -22,8 +22,6 @@ import java.util.concurrent.TimeUnit;
 @Service
 @SuppressWarnings({"unchecked", "rawtypes"})
 public class CustomerServiceImpl implements CustomerService {
-
-
     //注入远程调用接口
     @Autowired
     private CustomerInfoFeignClient client;

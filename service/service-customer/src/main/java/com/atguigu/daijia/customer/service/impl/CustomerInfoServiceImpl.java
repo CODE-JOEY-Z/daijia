@@ -52,6 +52,8 @@ public class CustomerInfoServiceImpl extends ServiceImpl<CustomerInfoMapper, Cus
             customerInfo.setAvatarUrl("https://oss.aliyuncs.com/aliyun_id_photo_bucket/default_handsome.jpg");
             customerInfo.setWxOpenId(openId);
             customerInfoMapper.insert(customerInfo);
+            Long id_2 = customerInfo.getId();
+            log.info("id{}",id_2);
         }
 
         // 4. 记录登录日志信息
@@ -62,7 +64,6 @@ public class CustomerInfoServiceImpl extends ServiceImpl<CustomerInfoMapper, Cus
         customerLoginLogMapper.insert(customerLoginLog);
         //5 返回用户id
         return customerInfo.getId();
-
     }
 
     @Override
